@@ -1,5 +1,8 @@
+import Sidebar from "./components/Sidebar";
+import Event from "./pages/Event";
+
 function App() {
-  return <h1 className="text-2xl text-indigo-400">Hello new Project</h1>;
+  return <Event />;
 }
 
 export default App;
