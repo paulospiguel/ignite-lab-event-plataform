@@ -1,9 +1,8 @@
 //import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
-import { CREATE_SUBSCRIBE } from "../graphql/mutation";
+import { useCreateSubscribeMutation } from "../graphql/generated";
 import { notify } from "../utils";
 
 interface SubscribeProps {}
@@ -18,7 +17,7 @@ function Subscribe({}: SubscribeProps) {
 
   const navigate = useNavigate();
 
-  const [createSubscribe, { data, loading }] = useMutation(CREATE_SUBSCRIBE);
+  const [createSubscribe, { loading }] = useCreateSubscribeMutation();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;

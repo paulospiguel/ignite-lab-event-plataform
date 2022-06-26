@@ -1,11 +1,12 @@
 import { Spinner } from "phosphor-react";
-import { getLessonList } from "../graphql/query";
+
+import { useGetLessonsQuery } from "../graphql/generated";
 import Lesson from "./Lesson";
 
 interface SidebarProps {}
 
 function Sidebar({}: SidebarProps) {
-  const { data, loading } = getLessonList();
+  const { data, loading } = useGetLessonsQuery();
   return (
     <aside className="w-[348px] bg-gray-700 p-6 border-l border-gray-600">
       <span className="block pb-6 mb-6 text-2xl font-bold border-b border-gray-500">
